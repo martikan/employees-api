@@ -1,0 +1,9 @@
+spring:
+  kafka:
+    admin:
+      auto-create: true
+    streams:
+      bootstrap-servers: localhost:9092
+  jpa:
+    hibernate:
+      ddl-auto: update
