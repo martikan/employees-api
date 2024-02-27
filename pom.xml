@@ -89,11 +89,6 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -158,6 +153,12 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>com/martikan/employeeapi/EmployeeApiApplication.class</exclude>
+                        <exclude>com/martikan/employeeapi/Routes.class</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
