@@ -4,13 +4,13 @@ WORKDIR /opt
 
 COPY . .
 
-RUN mvn clean package -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+RUN mvn clean package -DskipTests=true
 
 FROM openjdk:17-slim AS runner
 
 WORKDIR /opt
 
-COPY --from=builder target/*.jar api.jar
+COPY --from=builder /opt/target/*.jar ./api.jar
 
 EXPOSE 8085
 
